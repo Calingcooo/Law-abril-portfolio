@@ -1,5 +1,5 @@
+"use client"
 import React, { useEffect, useState } from 'react'
-import { useMediaQuery } from "@uidotdev/usehooks";
 import Logo from './Logo'
 import Nav from './Nav'
 import { IoIosSearch } from "react-icons/io";
@@ -9,6 +9,7 @@ import { AiOutlineTwitter } from "react-icons/ai";
 import { IoIosBasketball } from "react-icons/io";
 import { IoLogoInstagram } from "react-icons/io";
 import { AiFillYoutube } from "react-icons/ai";
+import { useMediaQuery } from '../utility/useMediaQuery';
 
 const socialData = [{
   url: "/",
