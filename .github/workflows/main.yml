@@ -9,6 +9,7 @@ on:
 
 jobs:
   deploy:
+    if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
 
     steps:
@@ -18,7 +19,7 @@ jobs:
     - name: Set up Node.js
       uses: actions/setup-node@v2
       with:
-        node-version: '20.x'  # Adjust to your Node.js version requirement
+        node-version: '20.x'
 
     - name: Install dependencies
       run: npm install
@@ -38,6 +39,10 @@ jobs:
         SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
       run: |
         ssh -i ~/.ssh/id_rsa_abril_law_office -o StrictHostKeyChecking=no root@91.108.104.53 '
+          eval "$(ssh-agent -s)"
+          ssh-add ~/.ssh/id_rsa_abril_law_office
+          ssh-add ~/.ssh/devolution_server_ssh
+          ssh-add -l
           cd /var/www/Law-abril-portfolio &&
           git pull origin develop &&
           npm install &&
