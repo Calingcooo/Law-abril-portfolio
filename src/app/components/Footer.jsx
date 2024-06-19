@@ -2,32 +2,12 @@ import React from 'react'
 import Image from 'next/image';
 import Link from 'next/link';
 import abrilfooterlogo from "../../../public/abril-footer-logo.png";
-
-import insta from "../../../public/insta.png";
-import ball from "../../../public/ball.png";
-import twitter from "../../../public/twitter.png";
-import youtube from "../../../public/youtube.png";
+import { FaFacebookF } from "react-icons/fa6";
+import { FaTwitter } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa";
+import { BiLogoGmail } from "react-icons/bi";
 
 const footerLinks = {
-    product: {
-        title: "Product",
-        productItems: [{
-            title: "Overview",
-            url: "/"
-        },{
-            title: "Features",
-            url: "/"
-        },{
-            title: "Tutorials",
-            url: "/"
-        },{
-            title: "Pricing",
-            url: "/"
-        },{
-            title: "Releases",
-            url: "/"
-        }, ]
-    },
     company: {
         title: "Company",
         companyItems: [{
@@ -70,21 +50,21 @@ const footerLinks = {
 
 const socialIcons = [
     {
-        icon: insta,
+        icon: <BiLogoGmail />,
+        url: "https://mail.google.com/mail/u/0/?fs=1&to=recipient@example.com&tf=cm"
+    },
+    {
+        icon: <FaFacebookF />,
+        url: "https://www.facebook.com"
+    },
+    {
+        icon: <FaInstagram />,
         url: "https://www.instagram.com"
     },
     {
-        icon: ball,
-        url: "https://www.ball.com"
-    },
-    {
-        icon: twitter,
+        icon: <FaTwitter />,
         url: "https://x.com"
     },
-    {
-        icon: youtube,
-        url: "https://www.youtube.com"
-    }
 ]
 
 const Footer = () => {
@@ -96,16 +76,6 @@ const Footer = () => {
                   <Image className='w-[20rem] max-md:w-full' alt='abril footer' src={abrilfooterlogo}/>
               </div>
               <div className='flex gap-5 text-white w-[50%] max-md:w-full max-md:flex-col  justify-between max-md:gap-10'>
-                  <div className='flex flex-col gap-5'>
-                      <h3 className='max-md:text-2xl'>{footerLinks.product.title}</h3>
-                      <ul className='flex flex-col gap-2'>
-                          {footerLinks.product.productItems.map((item, index) => (
-                              <li className='max-md:text-xl' key={`product-${index}`}>
-                                  <Link href={item.url} >{item.title}</Link>
-                              </li>
-                          ))}
-                      </ul>
-                  </div>
                   <div className='flex flex-col gap-5'>
                       <h3 className='max-md:text-2xl'>{footerLinks.company.title}</h3>
                       <ul className='flex flex-col gap-2'>
@@ -133,7 +103,9 @@ const Footer = () => {
             <ul className='flex gap-5 items-center'>
                 {socialIcons.map((social, index) => (
                     <Link key={index} href={social.url} >
-                        <Image alt='social icons' src={social.icon}/>
+                        <div className='bg-[#ffffff17] p-3 rounded-full'>
+                            {social.icon}
+                        </div>
                     </Link>
                 ))}
             </ul>

@@ -68,14 +68,6 @@ const Header = () => {
             }
             
             <Nav isMenuOpen={isMenuOpen} isSmallDevice={isSmallDevice}/>
-            <div className={clsx('flex items-center gap-5', {
-              "bg-white p-2 rounded-full w-full mt-5": isMenuOpen && isSmallDevice
-            })}>
-              <IoIosSearch className='cursor-pointer' size={25}/>
-              <input type="text" className='border-none outline-none' placeholder='Search'/>
-            </div>
-       
-            
           </div>
    
           
