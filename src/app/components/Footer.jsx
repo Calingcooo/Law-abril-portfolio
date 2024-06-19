@@ -57,11 +57,11 @@ const socialIcons = [
     },
     {
         icon: <FaFacebookF />,
-        url: "https://www.facebook.com"
+        url: "https://www.facebook.com/francisdominick?mibextid=JRoKGi"
     },
     {
         icon: <FaInstagram />,
-        url: "https://www.instagram.com"
+        url: "https://www.instagram.com/franzabz?igsh=MTMycHFxc3Vhb2Z2Mg%3D%3D&utm_source=qr"
     },
     {
         icon: <FaTwitter />,
