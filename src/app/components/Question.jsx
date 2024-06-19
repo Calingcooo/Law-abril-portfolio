@@ -13,7 +13,7 @@ const Question = () => {
             
                   <button className='flex gap-3 py-3 px-8 max-sm:w-full max-sm:justify-center bg-[#333333] items-center rounded-lg'>
                       <Image alt='call icon' src={callIcon}/>
-                      <p className='text-white text-xl font-semibold'>Call now</p>
+                      <p className='text-white text-xl font-semibold'>Contact Us</p>
                   </button>
               </div>
               <div className='w-[35%] max-lg:w-full max-lg:px-5 flex justify-center'>
