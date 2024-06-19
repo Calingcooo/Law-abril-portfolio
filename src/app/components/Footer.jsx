@@ -71,13 +71,13 @@ const socialIcons = [
 
 const faqAnswerQuestionData = [{
     question: "FAQ 1",
-    hiddenAnswer: "Example 1 answer"
+    hiddenAnswer: "FAQ 1 answer"
 }, {
     question: "FAQ 2",
-    hiddenAnswer: "Example 2 answer"
+    hiddenAnswer: "FAQ 2 answer"
 }, {
     question: "FAQ 3",
-    hiddenAnswer: "Example 3 answer"
+    hiddenAnswer: "FAQ 3 answer"
 }]
 
 const Footer = () => {
