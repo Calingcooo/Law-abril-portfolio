@@ -27,7 +27,7 @@ jobs:
     - name: Configure SSH
       run: |
         mkdir -p ~/.ssh
-        echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa_abril_law_office
+        echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa_abril_law_office
         chmod 600 ~/.ssh/id_rsa_abril_law_office
         ssh-keyscan -H 91.108.104.53 >> ~/.ssh/known_hosts
 
