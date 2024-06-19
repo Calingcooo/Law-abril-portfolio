@@ -70,13 +70,13 @@ const socialIcons = [
 ]
 
 const faqAnswerQuestionData = [{
-    question: "Example 1 ?",
+    question: "FAQ 1",
     hiddenAnswer: "Example 1 answer"
 }, {
-    question: "Example 2 ?",
+    question: "FAQ 2",
     hiddenAnswer: "Example 2 answer"
 }, {
-    question: "Example 3 ?",
+    question: "FAQ 3",
     hiddenAnswer: "Example 3 answer"
 }]
 
