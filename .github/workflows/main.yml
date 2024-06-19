@@ -1,0 +1,45 @@
+name: Deploy on merge to Develop branch
+
+on:
+  pull_request:
+    branches:
+      - develop
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14.x'  # Adjust to your Node.js version requirement
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Build the project
+      run: npm run build
+
+    - name: Configure SSH
+      run: |
+        mkdir -p ~/.ssh
+        echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa_abril_law_office
+        chmod 600 ~/.ssh/id_rsa_abril_law_office
+        ssh-keyscan -H 91.108.104.53 >> ~/.ssh/known_hosts
+
+    - name: Deploy to Server
+      env:
+        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+      run: |
+        ssh -i ~/.ssh/id_rsa_abril_law_office -o StrictHostKeyChecking=no root@91.108.104.53 '
+          cd /var/www/Law-abril-portfolio &&
+          git pull origin develop &&
+          npm install &&
+          npm run build &&
+          pm2 restart Law-abril-portfolio ||
+          pm2 start npm --name "Law-abril-portfolio" -- start --watch
+        '
