@@ -24,9 +24,6 @@ jobs:
     - name: Build the project
       run: npm run build
 
-    - name: Create SSH directory
-      run: mkdir -p ~/.ssh
-
     - name: Set up SSH key
       run: |
         echo "$SSH_PRIVATE_KEY" | tr -d '\r' > ~/.ssh/id_rsa_abril_law_office
