@@ -24,24 +24,12 @@ jobs:
     - name: Build the project
       run: npm run build
 
-    - name: Create SSH directory
-      run: mkdir -p ~/.ssh
-
-    - name: Set up SSH key
+    - name: Configure SSH
       run: |
-        echo "$SSH_PRIVATE_KEY" | tr -d '\r' > ~/.ssh/id_rsa_abril_law_office
+        mkdir -p ~/.ssh
+        echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa_abril_law_office
         chmod 600 ~/.ssh/id_rsa_abril_law_office
-      env:
-        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-
-    - name: Set up SSH config
-      run: |
-        echo -e "Host *\n\tStrictHostKeyChecking no\n" > ~/.ssh/config
-
-    - name: Add SSH key and start agent
-      run: |
-        eval "$(ssh-agent -s)"
-        ssh-add ~/.ssh/id_rsa_abril_law_office
+        ssh-keyscan -H 91.108.104.53 >> ~/.ssh/known_hosts
 
     - name: Deploy to Server
       run: |
@@ -53,3 +41,5 @@ jobs:
           pm2 restart Law-abril-portfolio ||
           pm2 start npm --name "Law-abril-portfolio" -- start --watch
         '
+      env:
+        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
