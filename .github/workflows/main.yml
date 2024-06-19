@@ -47,6 +47,5 @@ jobs:
           git pull origin develop &&
           npm install &&
           npm run build &&
-          pm2 restart Law-abril-portfolio ||
-          pm2 start npm --name "Law-abril-portfolio" -- start --watch
+          pm2 restart Law-abril-portfolio
         '
