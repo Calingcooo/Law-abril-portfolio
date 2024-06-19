@@ -33,13 +33,13 @@ jobs:
 
     - name: Deploy to Server
       run: |
-        ssh root@91.108.104.53 '
-          cd /var/www/Law-abril-portfolio &&
-          git pull origin develop &&
-          npm install &&
-          npm run build &&
-          pm2 restart Law-abril-portfolio ||
-          pm2 start npm --name "Law-abril-portfolio" -- start --watch
+        ssh -v root@91.108.104.53 '
+        cd /var/www/Law-abril-portfolio &&
+        git pull origin develop &&
+        npm install &&
+        npm run build &&
+        pm2 restart Law-abril-portfolio ||
+        pm2 start npm --name "Law-abril-portfolio" -- start --watch
         '
       env:
         SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
