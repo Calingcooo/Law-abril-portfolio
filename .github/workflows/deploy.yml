@@ -24,9 +24,28 @@ jobs:
     - name: Build the project
       run: npm run build
 
-    - name: Deploy to Server
+    - name: Set up SSH agent
+      id: ssh-agent-setup
+      run: |
+        eval "$(ssh-agent -s)"
+        echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
       env:
         SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+
+    - name: Deploy to Server
       run: |
-        echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add - > /dev/null
-        ssh -o StrictHostKeyChecking=no root@91.108.104.53 'cd /var/www/Law-abril-portfolio && git pull origin develop && npm install && npm run build && pm2 restart Law-abril-portfolio || pm2 start npm --name "Law-abril-portfolio" -- start --watch'
+        ssh -o StrictHostKeyChecking=no root@91.108.104.53 '
+          cd /var/www/Law-abril-portfolio &&
+          git pull origin develop &&
+          npm install &&
+          npm run build &&
+          pm2 restart Law-abril-portfolio ||
+          pm2 start npm --name "Law-abril-portfolio" -- start --watch
+        '
+
+    - name: Clean up SSH agent
+      if: always()
+      run: |
+        kill $SSH_AGENT_PID
+      env:
+        SSH_AGENT_PID: ${{ steps.ssh-agent-setup.outputs.SSH_AGENT_PID }}
