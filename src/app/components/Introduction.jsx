@@ -38,7 +38,7 @@ const Introduction = () => {
                   Francis Dominick P. Abril
                 </h1>
                 <p className='text-gray-400'>
-                  -Lawyer
+                  Attorney-at-Law
                 </p>
               </div>
         </div>
