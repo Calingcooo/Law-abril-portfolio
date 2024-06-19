@@ -18,7 +18,7 @@ jobs:
     - name: Set up Node.js
       uses: actions/setup-node@v2
       with:
-        node-version: '20.x'  # Adjust to your Node.js version requirement
+        node-version: '20.x'
 
     - name: Install dependencies
       run: npm install
@@ -31,7 +31,15 @@ jobs:
         mkdir -p ~/.ssh
         echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa_abril_law_office
         chmod 600 ~/.ssh/id_rsa_abril_law_office
+        ssh-keyscan -H github.com >> ~/.ssh/known_hosts
         ssh-keyscan -H 91.108.104.53 >> ~/.ssh/known_hosts
+
+    - name: Start SSH agent and add key
+      run: |
+        eval "$(ssh-agent -s)"
+        ssh-add ~/.ssh/devolution_server_ssh
+        ssh-add ~/.ssh/id_rsa_abril_law_office
+        ssh-add -l 
 
     - name: Deploy to Server
       env:
