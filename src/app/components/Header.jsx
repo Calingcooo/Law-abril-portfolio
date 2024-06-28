@@ -2,7 +2,6 @@
 import React, { useEffect, useState } from 'react'
 import Logo from './Logo'
 import Nav from './Nav'
-import { IoIosSearch } from "react-icons/io";
 import { AiOutlineMenu, AiOutlineClose  } from "react-icons/ai";
 import clsx from 'clsx';
 import { AiOutlineTwitter } from "react-icons/ai";
@@ -49,7 +48,6 @@ const Header = () => {
       <div className='max-w-[75rem] m-auto flex justify-between items-center py-5 max-lg:px-5'>
           <div className='flex items-center'>
               <Logo />
-              <h2 className='font-semibold'>Abril Law Office</h2>
           </div>
 
          
