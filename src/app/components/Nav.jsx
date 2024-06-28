@@ -5,7 +5,7 @@ import clsx from 'clsx';
 
 const navItems = [{
     text: "home",
-    url: "/contact"
+    url: "/"
 }, {
     text: "about",
     url: "/about"

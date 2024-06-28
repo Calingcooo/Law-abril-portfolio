@@ -5,16 +5,19 @@ import Introduction2 from './Introduction2'
 import Achievement from './Achievement'
 import Question from './Question'
 import Footer from './Footer'
+import Arrowup from './Arrowup'
+
 
 const Container = () => {
   return (
-    <div>
+    <div className='relative' id='home'>
         <Header />
         <Introduction />
         <Introduction2 />
         <Achievement />
         <Question />
         <Footer />
+        <Arrowup to={"home"}/>
     </div>
   )
 }
