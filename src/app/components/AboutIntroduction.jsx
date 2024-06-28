@@ -17,8 +17,8 @@ const AboutIntroduction = () => {
         <div className='w-[50%] max-lg:w-full flex-col flex gap-7 max-sm:items-center max-lg:py-5'>
           <div className='flex flex-col gap-10 items-end max-lg:items-center'>
             <div className='flex flex-col items-end max-lg:items-center'>
-                <h1 className='text-6xl font-bold max-sm:text-5xl text-gray-900'>Francis Dominick</h1>
-                <h1 className='text-6xl font-bold max-sm:text-5xl text-gray-900'>P. Abril</h1>
+                <h1 className='text-6xl font-bold max-sm:text-5xl text-gray-900 hightlightText'>Francis Dominick</h1>
+                <h1 className='text-6xl font-bold max-sm:text-5xl text-gray-900 hightlightText'>P. Abril</h1>
             </div>
             <p className='text-gray-900 text-md font-semibold'>
                 0906-968-0910 | fdpabril.law@gmail.com

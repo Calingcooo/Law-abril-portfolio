@@ -52,12 +52,12 @@ const AboutCareerHightLights = () => {
   return (
     <div className='bg-[#EEEEEE]'>
         <div className='max-w-[75rem] max-lg:px-10 max-lg:flex-col m-auto flex flex-col gap-5  px-14 py-20 '>
-            <h1 className='text-gray-900 font-bold text-2xl'>Career Highlights</h1>
+            <h1 className='text-gray-800 font-bold text-2xl hightlightText'>Career Highlights</h1>
             <div className='flex flex-wrap gap-5 justify-between'>
                 {careerHighlights.map((career, index) => (
                     index < noToShow && (
                         <div className='w-[45%] max-md:w-full flex flex-col rounded-lg bg-white p-5 gap-3 shadowCareerhightlightscard' key={index} >
-                            <h1 className='font-bold text-gray-900'>{career.title}</h1>
+                            <h1 className='font-bold text-gray-800 hightlightText'>{career.title}</h1>
                             <h2 className='font-semibold text-sm text-gray-600'>{career.semiTitle}</h2>
                             <p className='text-xs text-gray-500'>{career.description}</p>
                             {index === 2 && (

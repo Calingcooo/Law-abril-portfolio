@@ -69,27 +69,27 @@ const socialIcons = [
     },
 ]
 
-const faqAnswerQuestionData = [{
-    question: "FAQ 1",
-    hiddenAnswer: "FAQ 1 answer"
-}, {
-    question: "FAQ 2",
-    hiddenAnswer: "FAQ 2 answer"
-}, {
-    question: "FAQ 3",
-    hiddenAnswer: "FAQ 3 answer"
-}]
+// const faqAnswerQuestionData = [{
+//     question: "FAQ 1",
+//     hiddenAnswer: "FAQ 1 answer"
+// }, {
+//     question: "FAQ 2",
+//     hiddenAnswer: "FAQ 2 answer"
+// }, {
+//     question: "FAQ 3",
+//     hiddenAnswer: "FAQ 3 answer"
+// }]
 
 const Footer = () => {
-    const [isOptionDropdownOpen, setIsOptionDropdownOpen] = useState(null);
+    // const [isOptionDropdownOpen, setIsOptionDropdownOpen] = useState(null);
 
-    const handleOpenDropdown = (option) => {
-        if (option === isOptionDropdownOpen) {
-            setIsOptionDropdownOpen(null)
-        } else {
-            setIsOptionDropdownOpen(option);
-        }
-    }
+    // const handleOpenDropdown = (option) => {
+    //     if (option === isOptionDropdownOpen) {
+    //         setIsOptionDropdownOpen(null)
+    //     } else {
+    //         setIsOptionDropdownOpen(option);
+    //     }
+    // }
 
 
     return (
@@ -99,7 +99,7 @@ const Footer = () => {
               <div className='w-[30%] max-md:w-full'>
                   <Image className='w-[20rem] max-md:w-full' alt='abril footer' src={abrilfooterlogo}/>
               </div>
-              <div className='flex gap-5 text-white w-[70%] max-md:w-full max-md:flex-col max-md:items-start items-start justify-between max-md:gap-10 pt-10'>
+              <div className='flex gap-5 text-white w-[70%] max-md:w-full max-md:flex-col max-md:items-start items-start justify-evenly max-md:gap-10 pt-10'>
                   <div className='flex flex-col gap-5'>
                       <h3 className='max-md:text-2xl'>{footerLinks.company.title}</h3>
                       <ul className='flex flex-col gap-2'>
@@ -120,7 +120,7 @@ const Footer = () => {
                           ))}
                       </ul>
                   </div>
-                  <div className='flex flex-col gap-5 w-[400px]'>
+                  {/* <div className='flex flex-col gap-5 w-[400px]'>
                     <h3 className='text-2xl font-bold tracking-widest'>FAQ's</h3>
                     {faqAnswerQuestionData.map((option, index) => (
                         <div key={index} onClick={() => handleOpenDropdown(index)} className='flex flex-col bg-[#ffffff17] text-white cursor-pointer '>
@@ -132,7 +132,7 @@ const Footer = () => {
                             {index === isOptionDropdownOpen && <p className='p-5  border-t-gray-500 border-t text-xs leading-loose text-gray-500 '>{option.hiddenAnswer}</p>}
                         </div>
                     ))}
-                 </div>
+                 </div> */}
               </div>
           </div>
           <div className='text-white flex justify-between items-center px-5 max-md:flex-col-reverse max-md:gap-5'>
