@@ -4,14 +4,14 @@ import clsx from 'clsx';
 
 
 const navItems = [{
-    text: "contact",
+    text: "home",
     url: "/contact"
-}, {
-    text: "testimonials",
-    url: "/testimonials"
 }, {
     text: "about",
     url: "/about"
+}, {
+    text: "contact",
+    url: "/contact"
 }, {
     text: "terms",
     url: "/terms"
