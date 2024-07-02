@@ -3,13 +3,13 @@ import Image from 'next/image';
 import attyAbout from "../../../public/attyAbout.png";
 
 
-const AboutIntroduction = () => {
+const AttorneyIntroduction = () => {
   return (
     <div className='max-w-[75rem] max-lg:px-10 max-lg:flex-col m-auto flex items-center max-sm:text-center justify-between'>
         <div className='w-[40%] max-lg:w-[60%] max-md:w-[80%] max-sm:w-full flex flex-col justify-center relative px-5 max-sm:p-0'>
             <div className='flex flex-col h-full absolute w-full justify-center max-sm:justify-start items-center 
-              before:w-[100%] before:max-sm:w-[110%] before:h-[65%] before:max-sm:h-[75%] before:bg-gray-300 before:rounded-full before:opacity-50 before:-z-10
-              after:absolute after:top-[18%] after:max-sm:top-0 after:w-[80%] after:max-sm:w-[90%] after:h-[55%] after:max-sm:h-[65%] after:bg-gray-300 after:rounded-full after:opacity-50 after:-z-10'
+              before:w-[100%] before:max-sm:w-[110%] before:h-[85%] before:max-sm:h-[85%] before:bg-gray-300 before:rounded-full before:opacity-50 before:-z-10
+              after:absolute after:top-[10%] after:max-sm:top-3 after:w-[80%] after:max-sm:w-[90%] after:h-[60%] after:max-sm:h-[70%] after:bg-gray-300 after:rounded-full after:opacity-50 after:-z-10'
             >
             </div>
             <Image alt='atty profile' src={attyAbout} className='max-h-[700px] max-w-[700px] w-full'/>
@@ -41,4 +41,4 @@ const AboutIntroduction = () => {
   )
 }
 
-export default AboutIntroduction
+export default AttorneyIntroduction
