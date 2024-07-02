@@ -1,6 +1,7 @@
 
 import { Montserrat } from "next/font/google";
 import "./globals.css";
+import AOSProvider from "./AOSProvider";
 
 const montserrat = Montserrat({
   subsets: ['latin'],
@@ -15,10 +16,15 @@ export const metadata = {
   icons: { icon: "/favicon.ico"},
 };
 
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={montserrat.className}>{children}</body>
+      <body className={montserrat.className}>
+        <AOSProvider>
+         {children}
+        </AOSProvider>
+      </body>
     </html>
   );
 }

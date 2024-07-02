@@ -13,7 +13,7 @@ const data = [{
 
 const Achievement = () => {
   return (
-    <div className='eventBg flex flex-col gap-10 justify-center items-center py-16 '>
+    <div className='eventBg flex flex-col gap-10 justify-center items-center py-16 ' data-aos="fade-up" data-aos-duration="3000">
         <div className='text-center text-white flex flex-col gap-5'>
             <h1 className='text-5xl max-sm:text-4xl hightlightText font-bold'> Some count that matters</h1>
             <p className='text-lg'>Our achievement in the journey depicted in numbers</p>
