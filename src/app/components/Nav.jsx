@@ -7,14 +7,17 @@ const navItems = [{
     text: "home",
     url: "/"
 }, {
+    text: "practice area",
+    url: "/practice-area"
+} , {
     text: "about",
     url: "/about"
 }, {
+    text: "attorney",
+    url: "/attorney"
+}, {
     text: "contact",
     url: "/contact"
-}, {
-    text: "terms",
-    url: "/terms"
 }];
 
 

@@ -37,7 +37,7 @@ const careerHighlights = [{
         description: "Legal Researcher: Provincial Government of Tarlac; and o General Manager and Legal Officer of a Construction Company."
     }]
 
-const AboutCareerHightLights = () => {
+const AttorneyCareerHightLights = () => {
    const [isViewAllShow, setIsViewAllShow] = useState(false);
    const [noToShow, setNoToShow] = useState(4);
    const handleViewMore = () => {
@@ -77,4 +77,4 @@ const AboutCareerHightLights = () => {
   )
 }
 
-export default AboutCareerHightLights
+export default AttorneyCareerHightLights
