@@ -1,27 +1,28 @@
 import React from 'react'
-import circleLayer from "../../../public/Circle Layer.png"
-import bag from "../../../public/Bag.png";
-import rocket from "../../../public/Rocket.png";
-import userArrow from "../../../public/User Arrows.png";
+
+import equality from "../../../public/equality.png"
+import city from "../../../public/city.png";
+import siren from "../../../public/siren-on.png";
+import completed from "../../../public/completed.png";
 import Image from 'next/image';
 
 const data = [{
-    icon: circleLayer,
+    icon: equality,
     title: "Litigation and Alternative Dispute Resolution",
     description: "Representing clients in court and through arbitration or mediation to resolve disputes."
 },
 {
-    icon: bag,
+    icon: city,
     title: "Corporate Governance and Housekeeping",
     description: "Ensuring businesses comply with laws and regulations, maintaining corporate records, and advising on governance best practices."
 },
 {
-    icon: rocket,
+    icon: siren,
     title: "Legal Risk Management",
     description: "Identifying, assessing, and mitigating legal risks to protect your business interests."
 },
 {
-    icon: userArrow,
+    icon: completed,
     title: "Business Compliance and Regulatory Advisory",
     description: "Advising on compliance with industry regulations and standards to avoid legal issues."
 }]
@@ -37,8 +38,8 @@ const Introduction2 = () => {
             </div>
             <div className='flex flex-wrap justify-between w-[55%] max-lg:w-full gap-5 max-md:gap-y-10'>
                 {data.map((items, index) => (
-                    <div key={index} className='flex flex-col gap-5  w-[45%] max-sm:w-full bg-white py-3 px-5 rounded-lg card-shadow '>
-                        <Image alt='' src={items.icon}/>
+                    <div key={index} className='flex flex-col gap-5  w-[45%] max-sm:w-full bg-white p-5 rounded-lg card-shadow '>
+                        <Image alt='' className='w-10' src={items.icon}/>
                         <h1 className='font-semibold text-gray-800 hightlightText text-xl'>{items.title}</h1>
                         <p className='text-sm text-gray-400'>{items.description}</p>
                     </div>
