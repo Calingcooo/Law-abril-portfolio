@@ -1,10 +1,10 @@
 import React from 'react'
 //components
-import Header from './Header'
+import Header from '../Header'
 import AttorneyIntroduction from './AttorneyIntroduction'
 import AttorneyCareerHightLights from './AttorneyCareerHightLights'
-import Footer from './Footer'
-import Arrowup from './Arrowup'
+import Footer from '../Footer'
+import Arrowup from '../Arrowup'
 
 
 const AttorneyContainer = () => {

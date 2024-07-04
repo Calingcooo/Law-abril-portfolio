@@ -1,8 +1,8 @@
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link';
-import callNow from "../../../public/cover.jpg";
-import callIcon from "../../../public/Call.png";
+import callNow from "../../../../public/cover.jpg";
+import callIcon from "../../../../public/Call.png";
 
 const Question = () => {
   return (

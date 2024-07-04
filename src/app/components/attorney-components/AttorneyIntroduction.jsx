@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from 'next/image';
-import attyAbout from "../../../public/attyAbout.png";
+import attyAbout from "../../../../public/attyAbout.png";
 
 
 const AttorneyIntroduction = () => {
