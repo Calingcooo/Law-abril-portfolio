@@ -1,9 +1,9 @@
 import React from 'react'
 
-import equality from "../../../public/equality.png"
-import city from "../../../public/city.png";
-import siren from "../../../public/siren-on.png";
-import completed from "../../../public/completed.png";
+import equality from "../../../../public/equality.png"
+import city from "../../../../public/city.png";
+import siren from "../../../../public/siren-on.png";
+import completed from "../../../../public/completed.png";
 import Image from 'next/image';
 
 const data = [{

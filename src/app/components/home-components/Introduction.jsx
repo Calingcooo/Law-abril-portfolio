@@ -1,14 +1,14 @@
 import React from 'react';
 import Image from 'next/image';
 import clsx from 'clsx';
-import attyProfile from "../../../public/attyprofile.png";
+import attyProfile from "../../../../public/attyprofile.png";
 //partnerimage
-import providentFund from "../../../public/provident-fund.png";
-import amc from "../../../public/amc.jpg";
-import bomboradyo from "../../../public/bomboradyo.jpg";
-import lawinLogo from "../../../public/LawinLogo.png";
-import ojoMagica from "../../../public/ojo-majica.jpg";
-import nkr from "../../../public/nkr.png";
+import providentFund from "../../../../public/provident-fund.png";
+import amc from "../../../../public/amc.jpg";
+import bomboradyo from "../../../../public/bomboradyo.jpg";
+import lawinLogo from "../../../../public/LawinLogo.png";
+import ojoMagica from "../../../../public/ojo-majica.jpg";
+import nkr from "../../../../public/nkr.png";
 
 const partnerCompany = [providentFund, amc, bomboradyo, lawinLogo, ojoMagica, nkr];
 
