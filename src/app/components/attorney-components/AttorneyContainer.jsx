@@ -9,12 +9,12 @@ import Arrowup from '../Arrowup'
 
 const AttorneyContainer = () => {
   return (
-    <div className='flex flex-col relative duration-300' id='about'>
+    <div className='flex flex-col relative duration-300' id='attorney'>
         <Header />
         <AttorneyIntroduction />
         <AttorneyCareerHightLights />
         <Footer />
-        <Arrowup to={"about"}/>
+        <Arrowup to={"attorney"}/>
     </div>
    
   )
