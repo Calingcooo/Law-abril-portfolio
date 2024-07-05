@@ -8,7 +8,7 @@ import AboutContact from './about-contact';
 
 const AboutContainer = () => {
   return (
-    <div className='flex flex-col relative duration-300 gap-10' id='about'>
+    <div className='flex flex-col relative duration-300 gap-10 overflow-hidden' id='about'>
         <Header />
         <AboutIntroduction />
         <AboutIntro2 />

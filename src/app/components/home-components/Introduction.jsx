@@ -54,8 +54,8 @@ const Introduction = () => {
               data-aos="zoom-in" 
               data-aos-delay={300} 
               className='flex flex-col h-full absolute w-full justify-center max-sm:justify-start items-center 
-                before:w-[100%] before:max-sm:w-[110%] before:h-[65%] before:max-sm:h-[75%] before:bg-gray-300 before:rounded-full before:opacity-50 before:-z-10
-                after:absolute after:top-[18%] after:max-sm:top-0 after:w-[80%] after:max-sm:w-[90%] after:h-[55%] after:max-sm:h-[65%] after:bg-gray-300 after:rounded-full after:opacity-50 after:-z-10'
+                before:w-[100%] before:max-sm:w-[110%] before:h-[65%] before:max-sm:h-[65%] before:bg-gray-300 before:rounded-full before:opacity-50 before:-z-10
+                after:absolute after:top-[18%] after:max-sm:top-0 after:w-[80%] after:max-sm:w-[95%] after:h-[55%] after:max-sm:h-[60%] after:bg-gray-300 after:rounded-full after:opacity-50 after:-z-10'
             >
             </div>
             <Image 
