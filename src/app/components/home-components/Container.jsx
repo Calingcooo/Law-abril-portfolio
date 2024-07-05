@@ -10,7 +10,7 @@ import Arrowup from '../Arrowup'
 
 const Container = () => {
   return (
-    <div className='relative' id='home'>
+    <div className='relative overflow-hidden' id='home'>
         <Header />
         <Introduction />
         <Introduction2 />

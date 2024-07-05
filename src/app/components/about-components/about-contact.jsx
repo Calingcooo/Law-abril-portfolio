@@ -9,12 +9,12 @@ const AboutContact = () => {
         <form className='w-full text-sm flex flex-col gap-5'>
             <div className='flex flex-col gap-3'>
                 <p className='font-bold text-gray-700'>Name</p>
-                <div className='flex gap-5 w-full'>
-                    <div className='flex flex-col w-1/2'>
+                <div className='flex gap-5 w-full max-sm:flex-col'>
+                    <div className='flex flex-col w-1/2 max-sm:w-full'>
                         <input type="text" name='first' className='border border-gray-600 rounded-md py-2 px-2'/>
                         <label htmlFor="first" className='text-gray-500'>First</label>
                     </div>
-                    <div className='flex flex-col w-1/2'>
+                    <div className='flex flex-col w-1/2 max-sm:w-full'>
                         <input type="text" name='last' className='border border-gray-600 rounded-md py-2 px-2'/>
                         <label htmlFor="last" className='text-gray-500'>Last</label>
                     </div>
@@ -62,12 +62,12 @@ const AboutContact = () => {
                     <input type="text" name='address-2' className='border border-gray-600 rounded-md p-2'/>
                     <label address-2 className='text-gray-500'>Address Line 2</label>
                 </div>
-                <div className='flex gap-5 w-full'>
-                    <div className='flex flex-col w-1/2'>
+                <div className='flex gap-5 w-full max-sm:flex-col'>
+                    <div className='flex flex-col w-1/2 max-sm:w-full'>
                         <input type="text" name='city' className='border border-gray-600 rounded-md py-2 px-2'/>
                         <label htmlFor="city" className='text-gray-500'>City</label>
                     </div>
-                    <div className='flex flex-col w-1/2'>
+                    <div className='flex flex-col w-1/2 max-sm:w-full'>
                         <div className='border border-gray-600 rounded-md py-2 px-2 flex justify-between items-center'>
                             <input type="text" name='state' className='border-none outline-none'/>
                             <IoMdArrowDropdown size={20} className='text-gray-500'/>
