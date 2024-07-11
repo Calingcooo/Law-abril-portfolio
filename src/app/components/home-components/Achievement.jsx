@@ -1,7 +1,7 @@
 import React from 'react'
 
 const data = [{
-    title: "10",
+    title: "10+",
     description: "Trusted Companies"
 }, {
     title: "300+",
