@@ -3,14 +3,12 @@ import Image from 'next/image';
 import clsx from 'clsx';
 import attyProfile from "../../../../public/attyprofile.png";
 //partnerimage
-import providentFund from "../../../../public/provident-fund.png";
-import amc from "../../../../public/amc.jpg";
-import bomboradyo from "../../../../public/bomboradyo.jpg";
-import lawinLogo from "../../../../public/LawinLogo.png";
-import ojoMagica from "../../../../public/ojo-majica.jpg";
-import nkr from "../../../../public/nkr.png";
+import luelco from "../../../../public/luelco.jpeg";
+import uppfi from "../../../../public/uppfi.jpg";
+import diolazo from "../../../../public/Diolazo Press.jpg";
 
-const partnerCompany = [providentFund, amc, bomboradyo, lawinLogo, ojoMagica, nkr];
+
+const partnerCompany = [luelco, uppfi, diolazo];
 
 const Introduction = () => {
   return (

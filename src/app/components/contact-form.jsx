@@ -38,15 +38,9 @@ const ContactForm = () => {
                     <p className='text-gray-500'>Please select the field of law you need assistance with</p>
                 </div>
             </div>
+          
             <div className='flex flex-col gap-3'>
-                <label htmlFor="personal-injury" className='font-bold text-gray-700'>For Personal Injury concerns, please include the date of your injury </label>
-                <div className='flex flex-col'>
-                    <input type="text" name='personal-injury' className='border border-gray-600 rounded-md p-2'/>
-                    <p className='text-gray-500'>For non-personal injury concerns, please include the date today</p>
-                </div>
-            </div>
-            <div className='flex flex-col gap-3'>
-                <label htmlFor="what-happen" className='font-bold text-gray-700'>What happened?</label>
+                <label htmlFor="what-happen" className='font-bold text-gray-700'>Share your legal concern/query</label>
                 <div className='flex flex-col'>
                     <textarea rows={5} type="text" name='what-happen' className='border border-gray-600 rounded-md p-2'/>
                     <p className='text-gray-500'>Please include any information you believe is important to your case. We will do our best to answer your questions in a timely manner.</p>
