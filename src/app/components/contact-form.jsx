@@ -3,7 +3,7 @@
 import React from 'react'
 import { IoMdArrowDropdown } from "react-icons/io";
 
-const AboutContact = () => {
+const ContactForm = () => {
   return (
     <div className='max-w-[75rem] max-lg:px-10 m-auto flex flex-col'>
         <form className='w-full text-sm flex flex-col gap-5'>
@@ -102,4 +102,4 @@ const AboutContact = () => {
   )
 }
 
-export default AboutContact;
+export default ContactForm;

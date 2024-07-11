@@ -4,7 +4,7 @@ import Footer from '../Footer';
 import Arrowup from '../Arrowup';
 import AboutIntroduction from './about-introduction';
 import AboutIntro2 from './about-intro-2';
-import AboutContact from './about-contact';
+import ContactForm from '../contact-form';
 
 const AboutContainer = () => {
   return (
@@ -12,7 +12,7 @@ const AboutContainer = () => {
         <Header />
         <AboutIntroduction />
         <AboutIntro2 />
-        <AboutContact />
+        <ContactForm />
         <Footer />
         <Arrowup to={"about"}/>
     </div>

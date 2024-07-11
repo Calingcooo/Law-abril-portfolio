@@ -64,7 +64,7 @@ const AttorneyCareerHightLights = () => {
             <h1 className='text-gray-800 font-bold text-2xl hightlightText'>Career Highlights</h1>
             <div className='flex flex-wrap gap-5 justify-between'>
                 {careerHighlights.map((career, index) => (
-                    <div className='w-[45%] max-md:w-full flex flex-col rounded-lg bg-white p-5 gap-3 shadowCareerhightlightscard' key={index} >
+                    <div className='w-[45%] max-md:w-full flex flex-col rounded-lg bg-white p-5 gap-3 shadowCareerhightlightscard flex-grow flex-shrink' key={index} >
                         <h1 className='font-bold text-gray-800 hightlightText'>{career.title}</h1>
                         <h2 className='font-semibold text-sm text-gray-600'>{career.semiTitle}</h2>
                         <p className='text-xs text-gray-500'>{career.description}</p>
