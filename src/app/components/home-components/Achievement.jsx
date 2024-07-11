@@ -7,7 +7,7 @@ const data = [{
     title: "300+",
     description: "Taken business legalities"
 }, {
-    title: "8",
+    title: "2+",
     description: "Years of Journey"
 }]
 

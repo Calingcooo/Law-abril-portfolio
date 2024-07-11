@@ -34,7 +34,7 @@ const Introduction2 = () => {
         <div className='max-w-[75rem] m-auto  flex gap-5 justify-between py-12 px-10 max-sm:px-5 pb-32 max-lg:flex-col'>
             <div className='flex flex-col gap-5 w-[45%] max-lg:w-full p-5 max-sm:text-center'>
                 <h1 className='text-5xl text-gray-900 leading-normal hightlightText font-bold' data-aos="fade-up">Practice Areas/ Services</h1>
-                <p className='text-gray-400 text-lg leading-normal' data-aos="fade-up">At Abril Law Office, we provide expert legal services across a wide range of practice areas. Our experienced attorneys are dedicated to delivering personalized and effective solutions for your unique legal needs.</p>
+                <p className='text-gray-400 text-lg leading-normal' data-aos="fade-up">Abril Law Office provides legal services across a wide range of practice areas. Our experienced team is dedicated to delivering personalized and effective solutions for your unique legal needs.</p>
             </div>
             <div className='flex flex-wrap justify-between w-[55%] max-lg:w-full gap-5 max-md:gap-y-10'>
                 {data.map((items, index) => (

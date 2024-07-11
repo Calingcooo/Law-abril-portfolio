@@ -17,7 +17,7 @@ const navItems = [{
     url: "/attorney"
 }, {
     text: "contact",
-    url: "/contact"
+    url: "/contact-us"
 }];
 
 
