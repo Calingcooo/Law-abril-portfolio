@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 const careerHighlights = [{
-        title: "Trial Lawyer and Legal Advocate",
-        description: "Collaborating Counsel of Cariño Law Office (Baguio City): Assigned to handle Civil and Criminal Cases, and appearing before Election and Administrative Bodies;",
-        items: ["Freelance General Practitioner and Retained Counsel of different business entities;", "Significant situations or cases managed:", "200+victims of Syndicated Estafa in San Carlos City, Pangasinan (mostly public school teachers, farmers, and other individuals belonging to the marginalized sector);", "Appeared as Legal Counsel in the 2022 Election Canvass, for and on behalf of a Congressman in La Union;", "Secured the conviction of an Electric Cooperative Director accused of the crime Estafa.", "Lawyer of a local electric cooperative protesting in Court a 25M local tax assessment by a Provincial Government. Their Team was able to successfully reduce the said amount to a P10M amount, resulting in millions of savings for the said business.", "Advocacies: Women and Gender Sensitivity, Welfare of Persons with Disabilities, Legal Awareness, and fighting historical disinformation."]
+    title: "Head of Legal and Compliance, and Data Protection Unit.",
+    semiTitle: "University of the Philippines Provident Fund",
+    description: " In-house Counsel with responsibility to take care of the entire legal portfolio and data privacy concerns of the P3.2Billion plus Retirement Fund of more than 10,000 University employees nationwide, i.e., from U.P. System, Diliman, Baguio, Manila, Philippine General Hospital, Los Baños, Open University, Cebu, Visayas, and Mindanao Campuses. o Trivia: At the age of 26, officially, the youngest Unit Leader in the said Institution."
     },
     {
         title: "Special Counsel",
@@ -19,6 +19,10 @@ const careerHighlights = [{
         title:"Former Contracts Focal Person, Company Legal Officer, Discipline Committee Attorney, and Fraud Investigator.",
         semiTitle:"Aboitiz Group’s Financial Services, under Union Bank – PeraHub, Incorporated (money service provider with 3,000+ branches in the country)",
         description: "o Trivia: In 2021, Western Union Philippines commended his Investigation write ups and prescribed the same as nationwide model template for Investigative Reports involving Anti-Money Laundering infractions and Data Integrity issues. His output won the Special Recognition for Content Quality and Completeness of Report and Investigation, thereby making it a guide for all WU branches and business partners in the entire Philippines."
+    },{
+        title: "Trial Lawyer and Legal Advocate",
+        description: "Collaborating Counsel of Cariño Law Office (Baguio City): Assigned to handle Civil and Criminal Cases, and appearing before Election and Administrative Bodies;",
+        items: ["Freelance General Practitioner and Retained Counsel of different business entities;", "Significant situations or cases managed:", "200+victims of Syndicated Estafa in San Carlos City, Pangasinan (mostly public school teachers, farmers, and other individuals belonging to the marginalized sector);", "Appeared as Legal Counsel in the 2022 Election Canvass, for and on behalf of a Congressman in La Union;", "Secured the conviction of an Electric Cooperative Director accused of the crime Estafa.", "Lawyer of a local electric cooperative protesting in Court a 25M local tax assessment by a Provincial Government. Their Team was able to successfully reduce the said amount to a P10M amount, resulting in millions of savings for the said business.", "Advocacies: Women and Gender Sensitivity, Welfare of Persons with Disabilities, Legal Awareness, and fighting historical disinformation."]
     }, {
         title: "Broadcasting Lawyer",
         semiTitle: "Bombo Radyo Dagupan Station / GMA News and Public Affairs’ Sumbungan ng Bayan (24 Oras and/or Facebook Live with Oscar Oida)",
@@ -38,11 +42,9 @@ const careerHighlights = [{
     }, {
         title: "Before becoming a lawyer",
         description: "Legal Researcher: Provincial Government of Tarlac; and o General Manager and Legal Officer of a Construction Company."
-    }, {
-        title: "Head of Legal and Compliance, and Data Protection Unit.",
-        semiTitle: "University of the Philippines Provident Fund",
-        description: " In-house Counsel with responsibility to take care of the entire legal portfolio and data privacy concerns of the P3.2Billion plus Retirement Fund of more than 10,000 University employees nationwide, i.e., from U.P. System, Diliman, Baguio, Manila, Philippine General Hospital, Los Baños, Open University, Cebu, Visayas, and Mindanao Campuses. o Trivia: At the age of 26, officially, the youngest Unit Leader in the said Institution."
-    }]
+    }, ]
+
+
 
 const AttorneyCareerHightLights = () => {
    const [isViewAllShow, setIsViewAllShow] = useState(false);
@@ -81,7 +83,7 @@ const AttorneyCareerHightLights = () => {
                                 </ul>
                             </div>
                         )}
-                        {(index === 2 || index === 0) && (
+                        {(index === 2 || index === 4) && (
                             <ul className='flex flex-col px-4'>
                                 {index === 0 && (
                                     <p className='text-xs text-gray-500'>{career.description}</p>
