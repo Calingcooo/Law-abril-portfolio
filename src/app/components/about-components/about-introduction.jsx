@@ -7,7 +7,7 @@ const AboutIntroduction = () => {
     const locationData = ["UP Diliman, Quezon City", "Sablan, Benguet", "Mangaldan, Pangasinan", "Tarlac City, Tarlac "];
   return (
     <div className='max-w-[75rem] max-lg:px-10 m-auto flex flex-col'>
-        <div className='max-lg:flex-col flex items-center justify-between py-10 max-lg:gap-10'>
+        <div className='max-lg:flex-col flex items-start justify-between py-10 max-lg:gap-10'>
             <div className='w-[55%] max-lg:w-full flex flex-col gap-5'>
                 <h1 className='text-4xl font-bold hightlightText text-gray-900'>About Us</h1>
                 <h2 className='text-xl font-bold text-gray-800'>Embracing Modernity: </h2>

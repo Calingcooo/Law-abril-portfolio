@@ -45,7 +45,7 @@ const Header = () => {
 
   return (
     <div className=''>
-      <div className='max-w-[75rem] m-auto flex justify-between items-center py-5 max-lg:px-5'>
+      <div className='max-w-[75rem] m-auto flex justify-between items-center py-5 max-lg:px-5 mb-10'>
           <div className='flex items-center'>
               <Logo />
               <h2 className='font-semibold'>Abril Law Office</h2>
