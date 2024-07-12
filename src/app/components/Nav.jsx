@@ -7,8 +7,8 @@ const navItems = [{
     text: "home",
     url: "/"
 }, {
-    text: "practice area",
-    url: "/practice-area"
+    text: "practice areas",
+    url: "/practice-areas"
 } , {
     text: "about",
     url: "/about"
