@@ -67,18 +67,18 @@ const AttorneyCareerHightLights = () => {
                     <div className='w-[45%] max-md:w-full flex flex-col rounded-lg bg-white p-5 gap-3 shadowCareerhightlightscard flex-grow flex-shrink' key={index} >
                         <h1 className='font-bold text-gray-800 hightlightText'>{career.title}</h1>
                         <h2 className='font-semibold text-sm text-gray-600'>{career.semiTitle}</h2>
-                        <p className='text-xs text-gray-500'>{career.description}</p>
+                        <p className='text-sm text-gray-500'>{career.description}</p>
                         {index === 1 && (
                             <div className='flex flex-col gap-5'>
-                                <p className='mb-2 text-xs text-gray-500'>{career.description2}</p>
+                                <p className='mb-2 text-sm text-gray-500'>{career.description2}</p>
                                 <ul className='flex flex-col gap-1'>
                                     {career.items.map((item, index) =>(
-                                      <li className='text-xs text-gray-500' key={index}>o {item}</li>
+                                      <li className='text-sm text-gray-500' key={index}>o {item}</li>
                                     ))}
                                 </ul>
                                 <ul className='flex flex-col gap-1 px-4'>
                                     {career.items2.map((item, index) => (
-                                        <li className="text-xs text-gray-500 list-disc" key={index}>{item}</li>
+                                        <li className="text-sm text-gray-500 list-disc" key={index}>{item}</li>
                                     ))}
                                 </ul>
                             </div>
@@ -86,10 +86,10 @@ const AttorneyCareerHightLights = () => {
                         {(index === 2 || index === 4) && (
                             <ul className='flex flex-col px-4'>
                                 {index === 0 && (
-                                    <p className='text-xs text-gray-500'>{career.description}</p>
+                                    <p className='text-sm text-gray-500'>{career.description}</p>
                                 )}
                                 {career.items.map((item) => (
-                                    <li className='text-xs text-gray-500 list-disc'>{item}</li>
+                                    <li className='text-sm text-gray-500 list-disc'>{item}</li>
                                 ))}
                             </ul>
                         )}

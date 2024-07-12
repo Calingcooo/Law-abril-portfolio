@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import clsx from 'clsx';
+import Link from 'next/link';
 import attyProfile from "../../../../public/attyprofile.png";
 //partnerimage
 import luelco from "../../../../public/luelco.jpeg";
@@ -26,7 +26,7 @@ const Introduction = () => {
               </div>
               <p className='text-xl text-gray-400 pb-5 max-sm:hidden'>Trusted by 10+ companies in Philippines</p>
             </div>
-            <div className='grid grid-cols-3 gap-3 items-center'>
+            <div className='flex justify-evenly items-center'>
               {partnerCompany.map((partner, index) => (
                 <div 
                   key={index} 
@@ -41,6 +41,10 @@ const Introduction = () => {
                 </div>
               ))}
             </div>
+            <div className='flex justify-center w-full'>
+              <Link href={"/attorney#partner-intro"} className='text-gray-500 hover:text-gray-700'>VIEW MORE</Link>
+            </div>
+            
           </div>
         </div>
         <div className='w-[40%] max-lg:w-[60%] max-md:w-[80%] max-sm:w-full flex flex-col justify-center relative px-5 max-sm:p-0'>
@@ -63,8 +67,8 @@ const Introduction = () => {
                   Francis Dominick P. Abril
                 </h1>
                 <p className='text-gray-400' data-aos="zoom-in" data-aos-delay={200}> Attorney-at-Law</p>
-                <p className='text-gray-400 text-xs' data-aos="zoom-in" data-aos-delay={200}>Supreme Court Roll of Attorneys No. 77343; </p>
-                <p className='text-gray-400 text-xs' data-aos="zoom-in" data-aos-anchor-placement="bottom" data-aos-delay={200}>Admitted to the Philippine Bar on 07 May 2022.</p>
+                <p className='text-gray-400 text-sm' data-aos="zoom-in" data-aos-delay={200}>Supreme Court Roll of Attorneys No. 77343; </p>
+                <p className='text-gray-400 text-sm' data-aos="zoom-in" data-aos-anchor-placement="bottom" data-aos-delay={200}>Admitted to the Philippine Bar on 07 May 2022.</p>
               </div>
         </div>
     </div>
