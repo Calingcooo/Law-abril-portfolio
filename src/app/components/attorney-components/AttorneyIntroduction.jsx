@@ -20,9 +20,14 @@ const AttorneyIntroduction = () => {
                 <h1 className='text-6xl font-bold max-sm:text-5xl text-gray-900 hightlightText'>Francis Dominick</h1>
                 <h1 className='text-6xl font-bold max-sm:text-5xl text-gray-900 hightlightText'>P. Abril</h1>
             </div>
-            <p className='text-gray-900 text-md font-semibold'>
-                0906-968-0910 | fdpabril.law@gmail.com
-            </p>
+            <div className='flex flex-col items-end'>
+              <p className='text-gray-900 text-sm font-semibold'>
+                 Supreme Court Roll of Attorneys No. 77343;
+              </p>
+              <p className='text-gray-900 text-sm font-semibold'>
+                Admitted to the Philippine Bar on 07 May 2022.
+              </p>
+            </div>
             <div className='flex flex-col items-end max-lg:items-start w-[80%] max-lg:w-full gap-5'>
                 <p className='text-gray-900 font-semibold'>Active legal practitioner with intensive exposure to diverse special practice areas</p>
                 <div className='w-full'>

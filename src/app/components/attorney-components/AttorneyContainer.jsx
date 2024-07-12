@@ -5,6 +5,7 @@ import AttorneyIntroduction from './AttorneyIntroduction'
 import AttorneyCareerHightLights from './AttorneyCareerHightLights'
 import Footer from '../Footer'
 import Arrowup from '../Arrowup'
+import AttorneyPartner from './attorney-partner'
 
 
 const AttorneyContainer = () => {
@@ -13,6 +14,7 @@ const AttorneyContainer = () => {
         <Header />
         <AttorneyIntroduction />
         <AttorneyCareerHightLights />
+        <AttorneyPartner />
         <Footer />
         <Arrowup to={"attorney"}/>
     </div>

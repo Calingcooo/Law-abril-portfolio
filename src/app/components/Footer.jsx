@@ -5,7 +5,8 @@ import abrilfooterlogo from "../../../public/abril-footer-logo.png";
 import { FaFacebookF } from "react-icons/fa6";
 import { FaTwitter } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
-import { BiLogoGmail } from "react-icons/bi";
+import { MdEmail } from "react-icons/md";
+import { IoCall } from "react-icons/io5";
 
 
 const footerLinks = {
@@ -32,10 +33,6 @@ const footerLinks = {
 
 const socialIcons = [
     {
-        icon: <BiLogoGmail />,
-        url: "https://mail.google.com/mail/u/0/?fs=1&to=recipient@example.com&tf=cm"
-    },
-    {
         icon: <FaFacebookF />,
         url: "https://www.facebook.com/francisdominick?mibextid=JRoKGi"
     },
@@ -48,6 +45,17 @@ const socialIcons = [
         url: "https://x.com"
     },
 ]
+
+const contactData = [{
+    icon: <IoCall />,
+    content: "0906-968-0910",
+}, {
+    icon: <MdEmail />,
+    content: "inquiry@abrillawoffice.com"
+}, {
+    icon: <MdEmail />,
+    content: "fdpabril.law@gmail.com"
+}]
 
 // const faqAnswerQuestionData = [{
 //     question: "FAQ 1",
@@ -79,8 +87,8 @@ const Footer = () => {
               <div className='w-[50%] max-md:w-full'>
                   <Image className='w-[20rem] max-md:w-full' alt='abril footer' src={abrilfooterlogo}/>
               </div>
-              <div className='flex gap-5 text-white w-[50%] max-md:w-full max-md:flex-col max-md:items-start items-start justify-end max-md:gap-10 pt-10'>
-                  <div className='flex flex-col gap-5 items-end text-right'>
+              <div className='flex gap-10 text-white w-[50%] max-md:w-full max-lg:flex-col max-lg:items-center  items-start justify-between max-md:gap-10 pt-10'>
+                  <div className='flex flex-col gap-5 items-end max-lg:items-center max-sm:items-start text-right max-lg:text-center max-sm:text-left pt-5'>
                       <h3 className='max-md:text-2xl'>{footerLinks.quickLink.title}</h3>
                       <ul className='flex flex-col gap-2'>
                           {footerLinks.quickLink.companyItems.map((item, index) => (
@@ -89,6 +97,16 @@ const Footer = () => {
                               </li>
                           ))}
                       </ul>
+                  </div>
+                  <div className='flex flex-col gap-5'>
+                        {contactData.map((data, index) => (
+                            <div key={index} className='p-5 flex items-center gap-5 footer-card-shadow rounded-md'>
+                                <div className='bg-[#ffffff17] p-3 rounded-full'>
+                                    {data.icon}
+                                </div>
+                                <p>{data.content}</p>
+                            </div>
+                        ))}
                   </div>
               </div>
           </div>

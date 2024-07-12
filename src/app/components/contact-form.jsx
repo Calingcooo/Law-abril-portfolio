@@ -28,17 +28,7 @@ const ContactForm = () => {
                 <label htmlFor="email" className='font-bold text-gray-700'>Email Address</label>
                 <input type="text" name='email' className='border border-gray-600 rounded-md py-2 px-2'/>
             </div>
-            <div className='flex flex-col gap-3'>
-                <label htmlFor="legal-field" className='font-bold text-gray-700'>Legal Field you need help with </label>
-                <div className='flex flex-col'>
-                    <div className='border border-gray-600 rounded-md p-2 flex justify-between items-center'>
-                        <input type="text" name='legal-field' readOnly className='border-none outline-none'/>
-                        <IoMdArrowDropdown size={25} className='text-gray-500'/>
-                    </div>
-                    <p className='text-gray-500'>Please select the field of law you need assistance with</p>
-                </div>
-            </div>
-          
+         
             <div className='flex flex-col gap-3'>
                 <label htmlFor="what-happen" className='font-bold text-gray-700'>Share your legal concern/query</label>
                 <div className='flex flex-col'>
@@ -85,7 +75,7 @@ const ContactForm = () => {
                         <input name='disclamer' type="checkbox" />
                         <label htmlFor="disclamer text-gray-500">I understand and Agree</label>
                     </div>
-                    <p className='text-gray-500'>Upon submitting this form, I recognize that no Attorney-Client Relationship has been formed. I authorize the Loaiza Law Firm to view these information without any guarantees of confidentiality. (Please click the box to proceed)</p>
+                    <p className='text-gray-500'>I authorize Abril Law Office to process my personal information, subject to its commitment to uphold my data privacy rights under laws and regulations. (Please click the box to proceed)</p>
                 </div>
                 <div className='flex'>
                     <button className='bg-[#333333] text-white px-7 py-2 rounded-md hover:opacity-70'>SUBMIT</button>

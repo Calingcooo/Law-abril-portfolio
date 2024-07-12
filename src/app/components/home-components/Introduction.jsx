@@ -8,7 +8,7 @@ import uppfi from "../../../../public/uppfi.jpg";
 import diolazo from "../../../../public/Diolazo Press.jpg";
 
 
-const partnerCompany = [luelco, uppfi, diolazo];
+const partnerCompany = [uppfi, luelco, diolazo];
 
 const Introduction = () => {
   return (
@@ -30,15 +30,11 @@ const Introduction = () => {
               {partnerCompany.map((partner, index) => (
                 <div 
                   key={index} 
-                  className={clsx('w-40', {
-                    "flex justify-center": index === 1
-                  })} 
+                  className='w-40' 
                   data-aos="zoom-in"
                   data-aos-delay={(index + 1) * 100}
                 >
-                  <Image className={clsx('max-sm:hidden', {
-                    "h-20 w-auto": index === 1
-                    })} alt='partnership' 
+                  <Image className='max-sm:hidden' alt='partnership' 
                     key={index} 
                     src={partner}
                   /> 
