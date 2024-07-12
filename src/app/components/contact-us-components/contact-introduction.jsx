@@ -15,12 +15,12 @@ const ContactIntroduction = () => {
             <div className='flex flex-col gap-3 card-shadow p-5 rounded-sm max-md:items-center max-md:py-10'>
                 <Image src={emailContact}/>
                 <p className='font-semibold hightlightText text-gray-800 text-lg'>Send an email at:</p>
-                <p className='text-xs text-gray-700'>inquiry@abrillawoffice.com <br />| fdpabril.law@gmail.com</p>
+                <p className='text-sm text-gray-700'>inquiry@abrillawoffice.com <br />| fdpabril.law@gmail.com</p>
             </div>
             <div className='flex flex-col gap-3 card-shadow p-5 rounded-sm max-md:items-center max-md:py-10'>
                 <Image src={contactImg} />
                 <p className='font-semibold hightlightText text-gray-800 text-lg'>Contact me at:</p>
-                <p className='text-xs text-gray-700'> 0906-968-0910</p>
+                <p className='text-sm text-gray-700'> 0906-968-0910</p>
             </div>
         </div>
         

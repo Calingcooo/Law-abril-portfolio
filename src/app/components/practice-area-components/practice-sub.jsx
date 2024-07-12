@@ -46,7 +46,7 @@ const PracticeSub = () => {
                         <Image alt='images' className='w-[10rem]' src={list.icon}/>
                     </div>
                     <h3 className='hightlightText font-bold text-gray-700'>{list.title}</h3>
-                    <p className='text-xs text-gray-500 leading-loose'>{list.description}</p>
+                    <p className='text-sm text-gray-500 leading-loose'>{list.description}</p>
                 </div>
             ))}
         </div>
