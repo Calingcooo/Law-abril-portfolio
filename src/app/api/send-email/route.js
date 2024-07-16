@@ -27,9 +27,9 @@ export async function POST(request) {
   } = Object.fromEntries(formData);
 
   const transporter = nodemailer.createTransport({
-    host: "smtp.hostinger.com",
-    port: 465, // Port (use 587 for TLS, 465 for SSL)
-    secure: true, // true for 465, false for other ports
+    host: `${process.env.NEXT_APP_INQUIRY_EMAIL_HOST}`,
+    port: process.env.NEXT_APP_INQUIRY_EMAIL_PORT,
+    secure: process.env.NEXT_APP_INQUIRY_EMAIL_SECURE,
     auth: {
       user: `${process.env.NEXT_APP_INQUIRY_EMAIL}`,
       pass: `${process.env.NEXT_APP_INQUIRY_EMAIL_PASS}`,
