@@ -44,10 +44,10 @@ const CarouselDiv = () => {
     activeSlideIndex={activeSlide}
     onRequestChange={setActiveSlide}
     forwardBtnProps={{
-      children: <MdKeyboardArrowRight size={40}/>,
+      children: <MdKeyboardArrowRight className='max-lg:hidden' size={40}/>,
     }}
     backwardBtnProps={{
-      children: <MdKeyboardArrowLeft size={40}/>,
+      children: <MdKeyboardArrowLeft  className='max-lg:hidden' size={40}/>,
     }}
     dotsNav={{
       show: true,
