@@ -66,9 +66,30 @@ const ContactForm = () => {
     setSelectedBarangay(e.target.value);
   };
 
+  const handleFormSubmit = async (e) => {
+    e.preventDefault();
+
+    const baseUri = "http://localhost:3000/api/send-email";
+    const formData = new FormData(e.target);
+    try {
+      const response = await axios.post(baseUri, formData, {
+        headers: {
+          "content-type": "multipart/form-data",
+        },
+      });
+
+      console.log(response);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <div className="max-w-[75rem] max-lg:px-10 m-auto flex flex-col">
-      <form className="w-full text-sm flex flex-col gap-5">
+      <form
+        className="w-full text-sm flex flex-col gap-5"
+        onSubmit={handleFormSubmit}
+      >
         <div className="flex flex-col gap-3">
           <p className="font-bold text-gray-700">Name</p>
           <div className="flex gap-5 w-full max-sm:flex-col">
@@ -77,9 +98,10 @@ const ContactForm = () => {
                 type="text"
                 name="first"
                 className="border border-gray-600 rounded-md py-2 px-2"
+                required
               />
               <label htmlFor="first" className="text-gray-500">
-                First
+                <span className="text-red-500">*</span> First
               </label>
             </div>
             <div className="flex flex-col w-1/2 max-sm:w-full">
@@ -87,44 +109,49 @@ const ContactForm = () => {
                 type="text"
                 name="last"
                 className="border border-gray-600 rounded-md py-2 px-2"
+                required
               />
               <label htmlFor="last" className="text-gray-500">
-                Last
+                <span className="text-red-500">*</span> Last
               </label>
             </div>
           </div>
         </div>
         <div className="flex flex-col gap-3">
           <label htmlFor="cnumber" className="font-bold text-gray-700">
-            Contact Number
+            Contact Number <span className="text-red-500">*</span>
           </label>
           <input
             type="text"
             name="cnumber"
             className="border border-gray-600 rounded-md py-2 px-2"
+            required
           />
         </div>
         <div className="flex flex-col gap-3">
           <label htmlFor="email" className="font-bold text-gray-700">
-            Email Address
+            Email Address <span className="text-red-500">*</span>
           </label>
           <input
             type="text"
             name="email"
             className="border border-gray-600 rounded-md py-2 px-2"
+            required
           />
         </div>
 
         <div className="flex flex-col gap-3">
-          <label htmlFor="what-happen" className="font-bold text-gray-700">
-            Share your legal concern/query
+          <label htmlFor="content" className="font-bold text-gray-700">
+            Share your legal concern/query{" "}
+            <span className="text-red-500">*</span>
           </label>
           <div className="flex flex-col">
             <textarea
               rows={5}
               type="text"
-              name="what-happen"
+              name="content"
               className="border border-gray-600 rounded-md p-2"
+              required
             />
             <p className="text-gray-500">
               Please include any information you believe is important to your
@@ -138,20 +165,21 @@ const ContactForm = () => {
           <div className="flex flex-col">
             <input
               type="text"
-              name="address-1"
+              name="address_1"
               className="border border-gray-600 rounded-md p-2"
+              required
             />
-            <label htmlFor="address-1" className="text-gray-500">
-              Address Line 1
+            <label htmlFor="address_1" className="text-gray-500">
+              Address Line 1 <span className="text-red-500">*</span>
             </label>
           </div>
           <div className="flex flex-col">
             <input
               type="text"
-              name="address-2"
+              name="address_2"
               className="border border-gray-600 rounded-md p-2"
             />
-            <label address-2 className="text-gray-500">
+            <label htmlFor="address_2" className="text-gray-500">
               Address Line 2
             </label>
           </div>
@@ -165,6 +193,7 @@ const ContactForm = () => {
                 value={selectedRegion ? selectedRegion.name : ""}
                 onChange={handleRegionChange}
                 className="border border-gray-600 rounded-md py-2 px-2"
+                required
               >
                 <option value="" disabled>
                   Select a region
@@ -179,7 +208,7 @@ const ContactForm = () => {
                     ))}
               </select>
               <label htmlFor="region" className="text-gray-500">
-                Region
+                Region <span className="text-red-500">*</span>
               </label>
             </div>
             <div
@@ -191,6 +220,7 @@ const ContactForm = () => {
                 value={selectedCity}
                 onChange={handleCityChange}
                 className="border border-gray-600 rounded-md py-2 px-2"
+                required
               >
                 <option value="" disabled>
                   Select a city
@@ -205,7 +235,7 @@ const ContactForm = () => {
                     ))}
               </select>
               <label htmlFor="city" className="text-gray-500">
-                City
+                City <span className="text-red-500">*</span>
               </label>
             </div>
             <div
@@ -217,6 +247,7 @@ const ContactForm = () => {
                 value={selectedBarangay}
                 onChange={handleBarangayChange}
                 className="border border-gray-600 rounded-md py-2 px-2"
+                required
               >
                 <option value="" disabled>
                   Select a barangay
@@ -231,27 +262,26 @@ const ContactForm = () => {
                     ))}
               </select>
               <label htmlFor="barangay" className="text-gray-500">
-                Barangay
+                Barangay <span className="text-red-500">*</span>
               </label>
             </div>
           </div>
           <div className="flex flex-col gap-3">
-            <label
-              htmlFor="communication-pref"
-              className="font-bold text-gray-700"
-            >
+            <label htmlFor="comm_pref" className="font-bold text-gray-700">
               Communication Preference
             </label>
             <div className="flex flex-col">
-              <div className="border border-gray-600 rounded-md py-2 px-2 flex justify-between items-center">
-                <input
-                  type="text"
-                  name="communication-pref"
-                  readOnly
-                  className="outline-none border-none"
-                />
-                <IoMdArrowDropdown size={20} className="text-gray-500" />
-              </div>
+              <select
+                name="comm_pref"
+                className="border border-gray-600 rounded-md py-2 px-2"
+                required
+              >
+                <option value="" disabled>
+                  Select your preference
+                </option>
+                <option>Email</option>
+                <option>Mobile number</option>
+              </select>
               <p className="text-gray-500">
                 How would you like to be contacted.
               </p>
@@ -260,8 +290,8 @@ const ContactForm = () => {
           <div className="flex flex-col gap-3 mt-5">
             <p className="font-bold text-gray-700">Disclamer</p>
             <div className="flex items-center gap-3">
-              <input name="disclamer" type="checkbox" />
-              <label htmlFor="disclamer text-gray-500">
+              <input name="disclaimer" type="checkbox" />
+              <label htmlFor="disclaimer text-gray-500">
                 I understand and Agree
               </label>
             </div>
