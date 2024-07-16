@@ -1,19 +1,20 @@
 import React, { useState, useEffect } from "react";
-import { IoMdArrowDropdown } from "react-icons/io";
+import SuccessModal from "./SuccessModal";
 import axios from "axios";
 
 const ContactForm = () => {
+  const [successMessage, setSuccessMessage] = useState("");
   const [regions, setRegions] = useState([]);
   const [cities, setAllCities] = useState([]);
   const [barangays, setBarangays] = useState([]);
 
   const [selectedRegion, setSelectedRegion] = useState(null);
-  const [selectedCity, setSelectedCity] = useState("");
-  const [selectedBarangay, setSelectedBarangay] = useState("");
+  const [selectedCity, setSelectedCity] = useState(null);
+  const [selectedBarangay, setSelectedBarangay] = useState(null);
 
   const regionUri = "https://psgc.gitlab.io/api/regions/";
   const cityUri = `https://psgc.gitlab.io/api/regions/${selectedRegion?.code}/cities/`;
-  const barangayUri = `https://psgc.gitlab.io/api/regions/${selectedRegion?.code}/barangays/`;
+  const barangayUri = `https://psgc.gitlab.io/api/cities/${selectedCity?.code}/barangays/`;
 
   const handleRegionClick = async () => {
     try {
@@ -59,7 +60,9 @@ const ContactForm = () => {
   };
 
   const handleCityChange = (e) => {
-    setSelectedCity(e.target.value);
+    const selected_city = cities.find((city) => city.name === e.target.value);
+
+    setSelectedCity(selected_city);
   };
 
   const handleBarangayChange = (e) => {
@@ -72,20 +75,32 @@ const ContactForm = () => {
     const baseUri = "http://localhost:3000/api/send-email";
     const formData = new FormData(e.target);
     try {
-      const response = await axios.post(baseUri, formData, {
+      const { data } = await axios.post(baseUri, formData, {
         headers: {
           "content-type": "multipart/form-data",
         },
       });
 
-      console.log(response);
+      setSuccessMessage(data.message);
     } catch (error) {
       console.log(error);
     }
   };
 
+  useEffect(() => {
+    handleCityClick();
+    handleBarangayClick();
+  }, [selectedRegion, selectedCity]);
+
   return (
     <div className="max-w-[75rem] max-lg:px-10 m-auto flex flex-col">
+      {successMessage && (
+        <SuccessModal
+          successMessage={successMessage}
+          handleClick={() => setSuccessMessage("")}
+        />
+      )}
+
       <form
         className="w-full text-sm flex flex-col gap-5"
         onSubmit={handleFormSubmit}
@@ -211,13 +226,10 @@ const ContactForm = () => {
                 Region <span className="text-red-500">*</span>
               </label>
             </div>
-            <div
-              className="flex flex-col w-1/2 max-sm:w-full"
-              onClick={handleCityClick}
-            >
+            <div className="flex flex-col w-1/2 max-sm:w-full">
               <select
                 name="city"
-                value={selectedCity}
+                value={selectedCity.name}
                 onChange={handleCityChange}
                 className="border border-gray-600 rounded-md py-2 px-2"
                 required
@@ -238,10 +250,7 @@ const ContactForm = () => {
                 City <span className="text-red-500">*</span>
               </label>
             </div>
-            <div
-              className="flex flex-col w-1/2 max-sm:w-full"
-              onClick={handleBarangayClick}
-            >
+            <div className="flex flex-col w-1/2 max-sm:w-full">
               <select
                 name="barangay"
                 value={selectedBarangay}
