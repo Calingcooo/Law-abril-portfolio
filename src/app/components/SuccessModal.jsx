@@ -3,7 +3,7 @@ import React from "react";
 //components
 import ModalBtn from "./ModalBtn";
 import LottieConverter from "../utility/lottieConverter";
-import successAnimation from "../assets/successAnimation";
+import successAnimation from "../assets/successAnimation.json";
 
 const SuccessModal = ({ successMessage, handleClick }) => {
   return (
