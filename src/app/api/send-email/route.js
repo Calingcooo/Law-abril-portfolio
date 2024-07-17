@@ -3,20 +3,15 @@ import nodemailer from "nodemailer";
 
 export async function POST(request) {
   const allowedOrigins = [
-    "https://www.abrillawoffice.com/",
-    "http://localhost:3000/",
+    "https://www.abrillawoffice.com",
+    "http://localhost:3000",
   ];
 
-  const origin = request.origin.get("Origin");
-
   const corsHeaders = {
+    "Access-Control-Allow-Origin": allowedOrigins,
     "Access-Control-Allow-Methods": "POST, OPTIONS",
     "Access-Control-Allow-Headers": "Content-Type",
   };
-
-  if (allowedOrigins.includes(origin)) {
-    corsHeaders["Access-Control-Allow-Origin"] = origin;
-  }
 
   // Handle OPTIONS request for CORS preflight
   if (request.method === "OPTIONS") {
@@ -81,7 +76,7 @@ export async function POST(request) {
 
   if (disclaimer !== "on") {
     return Response.json(
-      { success: false, message: "You have to read the disclaimer to proceed" },
+      { success: false, message: "You have to check and read the disclaimer before proceeding" },
       {
         status: 400,
         headers: { ...corsHeaders, "Content-Type": "application/json" },
