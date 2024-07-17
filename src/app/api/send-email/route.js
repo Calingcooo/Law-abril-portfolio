@@ -1,11 +1,38 @@
-export const dynamic = "force-dynamic"; // defaults to auto
+export const dynamic = "force-dynamic";
 import nodemailer from "nodemailer";
 
 export async function POST(request) {
+  const allowedOrigins = [
+    "https://www.abrillawoffice.com/",
+    "http://localhost:3000/",
+  ];
+
+  const origin = request.origin.get("Origin");
+
+  const corsHeaders = {
+    "Access-Control-Allow-Methods": "POST, OPTIONS",
+    "Access-Control-Allow-Headers": "Content-Type",
+  };
+
+  if (allowedOrigins.includes(origin)) {
+    corsHeaders["Access-Control-Allow-Origin"] = origin;
+  }
+
+  // Handle OPTIONS request for CORS preflight
+  if (request.method === "OPTIONS") {
+    return Response.json(null, {
+      status: 204,
+      headers: corsHeaders,
+    });
+  }
+
   if (request.method !== "POST") {
     return Response.json(
       { success: false, message: "Only POST requests allowed" },
-      { status: 405 }
+      {
+        status: 405,
+        headers: { ...corsHeaders, "Content-Type": "application/json" },
+      }
     );
   }
 
@@ -55,7 +82,10 @@ export async function POST(request) {
   if (disclaimer !== "on") {
     return Response.json(
       { success: false, message: "You have to read the disclaimer to proceed" },
-      { status: 400 }
+      {
+        status: 400,
+        headers: { ...corsHeaders, "Content-Type": "application/json" },
+      }
     );
   }
 
@@ -63,13 +93,19 @@ export async function POST(request) {
     await transporter.sendMail(mailOptions);
     return Response.json(
       { success: true, message: "Inquiry sent successfully!" },
-      { status: 200 }
+      {
+        status: 200,
+        headers: { ...corsHeaders, "Content-Type": "application/json" },
+      }
     );
   } catch (error) {
     console.error(error);
     return Response.json(
       { success: false, message: `Failed to send email. ${error}` },
-      { status: 500 }
+      {
+        status: 500,
+        headers: { ...corsHeaders, "Content-Type": "application/json" },
+      }
     );
   }
 }
