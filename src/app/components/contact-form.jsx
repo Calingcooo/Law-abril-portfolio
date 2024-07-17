@@ -72,7 +72,7 @@ const ContactForm = () => {
   const handleFormSubmit = async (e) => {
     e.preventDefault();
 
-    const baseUri = "http://localhost:3000/api/send-email";
+    const baseUri = "https://abrillawoffice.com/api/send-email";
     const formData = new FormData(e.target);
     try {
       const { data } = await axios.post(baseUri, formData, {
