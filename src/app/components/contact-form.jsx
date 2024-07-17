@@ -72,7 +72,7 @@ const ContactForm = () => {
   const handleFormSubmit = async (e) => {
     e.preventDefault();
 
-    const baseUri = "http://localhost:3000/api/send-email";
+    const baseUri = "https://abrillawoffice.com/api/send-email";
     const formData = new FormData(e.target);
     try {
       const { data } = await axios.post(baseUri, formData, {
@@ -229,7 +229,7 @@ const ContactForm = () => {
             <div className="flex flex-col w-1/2 max-sm:w-full">
               <select
                 name="city"
-                value={selectedCity.name}
+                value={selectedCity ? selectedCity.name : ""}
                 onChange={handleCityChange}
                 className="border border-gray-600 rounded-md py-2 px-2"
                 required
