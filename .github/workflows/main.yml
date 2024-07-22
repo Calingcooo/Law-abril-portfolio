@@ -32,7 +32,6 @@ jobs:
         mkdir -p ~/.ssh
         echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/abril_law_rsa_deploy
         chmod 600 ~/.ssh/abril_law_rsa_deploy
-        chmod 600 ~/.ssh/github_id_rsa
         ssh-keyscan -H 91.108.104.53 >> ~/.ssh/known_hosts
 
     - name: Deploy to Server
