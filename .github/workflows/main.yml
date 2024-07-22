@@ -16,6 +16,16 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
+    - name: Cache Node.js modules
+      uses: actions/cache@v3
+      with:
+        path: |
+          ~/.npm
+          ~/.cache
+        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-node-
+
     - name: Set up Node.js
       uses: actions/setup-node@v2
       with:
@@ -39,10 +49,6 @@ jobs:
         SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
       run: |
         ssh -i ~/.ssh/abril_law_rsa_deploy -o StrictHostKeyChecking=no root@91.108.104.53 '
-          eval "$(ssh-agent -s)" &&
-          ssh-add ~/.ssh/abril_law_rsa_deploy &&
-          ssh-add ~/.ssh/github_id_rsa &&
-          ssh-add -l &&
           cd /var/www/Law-abril-portfolio &&
           git pull origin develop &&
           npm install &&
