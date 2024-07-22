@@ -2,13 +2,8 @@ export const dynamic = "force-dynamic";
 import nodemailer from "nodemailer";
 
 export async function POST(request) {
-  const allowedOrigins = [
-    "https://www.abrillawoffice.com",
-    "http://localhost:3000",
-  ];
-
   const corsHeaders = {
-    "Access-Control-Allow-Origin": allowedOrigins,
+    "Access-Control-Allow-Origin": "https://www.abrillawoffice.com",
     "Access-Control-Allow-Methods": "POST, OPTIONS",
     "Access-Control-Allow-Headers": "Content-Type",
   };
