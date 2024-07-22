@@ -38,7 +38,7 @@ jobs:
       env:
         SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
       run: |
-        ssh -i ~/.ssh/abril_law_rsa_deploy -o StrictHostKeyChecking=no root@91.108.104.53 '
+        ssh -i ~/.ssh/github_id_rsa -o StrictHostKeyChecking=no root@91.108.104.53 '
           eval "$(ssh-agent -s)" &&
           ssh-add ~/.ssh/abril_law_rsa_deploy &&
           ssh-add ~/.ssh/github_id_rsa &&
