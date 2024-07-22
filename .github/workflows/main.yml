@@ -32,10 +32,8 @@ jobs:
         mkdir -p ~/.ssh
         echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa_abril_law_office
         chmod 600 ~/.ssh/id_rsa_abril_law_office
-        chmod 600 ~/.ssh/github_id_rsa
         eval "$(ssh-agent -s)" &&
         ssh-add ~/.ssh/id_rsa_abril_law_office &&
-        ssh-add ~/.ssh/github_id_rsa &&
         ssh-add -l &&
         ssh-keyscan -H 91.108.104.53 >> ~/.ssh/known_hosts
 
@@ -43,7 +41,6 @@ jobs:
       env:
         SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
       run: |
-        ssh -i ~/.ssh/id_rsa_abril_law_office -o StrictHostKeyChecking=no root@91.108.104.53 '
         ssh -i ~/.ssh/id_rsa_abril_law_office -o StrictHostKeyChecking=no root@91.108.104.53 '
           cd /var/www/Law-abril-portfolio &&
           git pull origin develop &&
