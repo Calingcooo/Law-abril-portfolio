@@ -30,18 +30,19 @@ jobs:
     - name: Configure SSH
       run: |
         mkdir -p ~/.ssh
-        echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa_abril_law_office
-        chmod 600 ~/.ssh/id_rsa_abril_law_office
-        eval "$(ssh-agent -s)" &&
-        ssh-add ~/.ssh/id_rsa_abril_law_office &&
-        ssh-add -l &&
+        echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/abril_law_rsa_deploy
+        chmod 600 ~/.ssh/abril_law_rsa_deploy
         ssh-keyscan -H 91.108.104.53 >> ~/.ssh/known_hosts
 
     - name: Deploy to Server
       env:
         SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
       run: |
-        ssh -i ~/.ssh/id_rsa_abril_law_office -o StrictHostKeyChecking=no root@91.108.104.53 '
+        ssh -i ~/.ssh/abril_law_rsa_deploy -o StrictHostKeyChecking=no root@91.108.104.53 '
+          eval "$(ssh-agent -s)" &&
+          ssh-add ~/.ssh/abril_law_rsa_deploy &&
+          ssh-add ~/.ssh/github_id_rsa &&
+          ssh-add -l &&
           cd /var/www/Law-abril-portfolio &&
           git pull origin develop &&
           npm install &&
