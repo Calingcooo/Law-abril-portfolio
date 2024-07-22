@@ -41,7 +41,7 @@ jobs:
       env:
         SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
       run: |
-        ssh -i ~/.ssh/github_id_rsa -o StrictHostKeyChecking=no root@91.108.104.53 '
+        ssh -i ~/.ssh/id_rsa_abril_law_office -o StrictHostKeyChecking=no root@91.108.104.53 '
           cd /var/www/Law-abril-portfolio &&
           git pull origin develop &&
           npm install &&
