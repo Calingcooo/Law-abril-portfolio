@@ -28,6 +28,10 @@ jobs:
         cache: 'npm'
     - name: Configure Git safe directory
       run: git config --global --add safe.directory ${{ secrets.WORKING_DIRECTORY }}
+    - name: Configure ssh
+      run: |
+        eval "$(ssh-agent -s)"
+        ssh-add ~/.ssh/SSH_PRIVATE_KEY
     - name: Pull latest code
       run: git pull origin develop
       working-directory: ${{ secrets.WORKING_DIRECTORY }}
