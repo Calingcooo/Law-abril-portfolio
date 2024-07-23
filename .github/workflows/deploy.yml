@@ -32,8 +32,6 @@ jobs:
       run: |
         mkdir -p ~/.ssh
         ssh-keyscan github.com >> ~/.ssh/known_hosts
-    - name: Configure ssh
-
     - name: Pull latest code
       run: |
         eval "$(ssh-agent -s)"
