@@ -33,14 +33,15 @@ jobs:
         mkdir -p ~/.ssh
         ssh-keyscan github.com >> ~/.ssh/known_hosts
     - name: Configure ssh
+
+    - name: Pull latest code
       run: |
         eval "$(ssh-agent -s)"
         echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/SSH_PRIVATE_KEY
         chmod 600 ~/.ssh/SSH_PRIVATE_KEY
         ssh-add ~/.ssh/SSH_PRIVATE_KEY
-    - name: Pull latest code
-      run: git pull origin develop
-      working-directory: ${{ secrets.WORKING_DIRECTORY }}
+        git pull origin develop
+      working-directory: ${{ secrets.WORKING_DIRECTORY }}      
     - name: Install dependencies
       run: npm ci
       working-directory: ${{ secrets.WORKING_DIRECTORY }}
