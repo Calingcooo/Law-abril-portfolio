@@ -28,9 +28,15 @@ jobs:
         cache: 'npm'
     - name: Configure Git safe directory
       run: git config --global --add safe.directory ${{ secrets.WORKING_DIRECTORY }}
+    - name: Add GitHub to known hosts
+      run: |
+        mkdir -p ~/.ssh
+        ssh-keyscan github.com >> ~/.ssh/known_hosts
     - name: Configure ssh
       run: |
         eval "$(ssh-agent -s)"
+        echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/SSH_PRIVATE_KEY
+        chmod 600 ~/.ssh/SSH_PRIVATE_KEY
         ssh-add ~/.ssh/SSH_PRIVATE_KEY
     - name: Pull latest code
       run: git pull origin develop
