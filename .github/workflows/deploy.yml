@@ -26,15 +26,17 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+    - name: Configure Git safe directory
+      run: git config --global --add safe.directory ${{ secrets.WORKING_DIRECTORY }}
     - name: Pull latest code
       run: git pull origin develop
-      working-directory: /var/www/Law-abril-portfolio
+      working-directory: ${{ secrets.WORKING_DIRECTORY }}
     - name: Install dependencies
       run: npm ci
-      working-directory: /var/www/Law-abril-portfolio
+      working-directory: ${{ secrets.WORKING_DIRECTORY }}
     - name: Build the project
       run: npm run build
-      working-directory: /var/www/Law-abril-portfolio
+      working-directory: ${{ secrets.WORKING_DIRECTORY }}
     - name: Restart PM2
       run: pm2 restart 0
-      working-directory: /var/www/Law-abril-portfolio
+      working-directory: ${{ secrets.WORKING_DIRECTORY }}
