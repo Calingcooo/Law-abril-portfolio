@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import lottie from "lottie-web";
 
 const LottieConverter = ({ animationData, id, size }) => {
   useEffect(() => {
@@ -7,7 +6,7 @@ const LottieConverter = ({ animationData, id, size }) => {
     const container = document.getElementById(id);
 
     // Load the animation
-    const anim = lottie.loadAnimation({
+    const anim = import("lottie-web").loadAnimation({
       container,
       animationData, // URL or the actual animation data object
       renderer: "svg", // You can choose the renderer (svg, canvas, html)
